@@ -1,3 +1,5 @@
+package learning_java;
+
 public class Triangle {
     static final int numberOfSides = 3;
 
