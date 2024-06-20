@@ -1,19 +1,23 @@
 public class Main {
     public static void main(String[] args) {
-        calculateTotalMealPrice(15, .2, .08);
-        calculateTotalMealPrice(25, .18, .08);
+        final double groupTotalMealPrice = calculateTotalMealPrice(100, .2, .08);
+        printPrice(groupTotalMealPrice);
+
+        final double individualMealPrice = groupTotalMealPrice / 5;
+        System.out.printf("Total per person is %.2f\n", individualMealPrice);
     }
 
-    private static void calculateTotalMealPrice(
-        double listedMealPrice,
-        double tipRate,
-        double taxRate
-    ) {
+    private static void printPrice(double total) {
+        System.out.printf("Your total meal price is %.2f\n", total);
+    }
+
+    private static double calculateTotalMealPrice(
+            double listedMealPrice,
+            double tipRate,
+            double taxRate) {
         double tip = tipRate * listedMealPrice;
         double tax = taxRate * listedMealPrice;
-        double result = listedMealPrice + tip + tax;
 
-        System.out.printf("Your total meal price is %s\n", result);
+        return listedMealPrice + tip + tax;
     }
 }
-
