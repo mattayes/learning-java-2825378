@@ -1,23 +1,14 @@
 public class Main {
     public static void main(String[] args) {
-        String out = moveCapitalLettersToFront("DweweDDSDSweDwegdW");
-        System.out.println(out);
-    }
+        Triangle triangleA = new Triangle(15, 8, 15, 8, 17);
+        Triangle triangleB = new Triangle(3, 2.598, 3, 3, 3);
 
-    private static String moveCapitalLettersToFront(String s) {
-        // Your code goes here.
-        StringBuilder lower = new StringBuilder();
-        StringBuilder upper = new StringBuilder();
+        System.out.printf("%s %s\n", triangleA, triangleB);
 
-        for (char c : s.toCharArray()) {
-            if (Character.isLowerCase(c)) {
-                lower.append(c);
-            } else {
-                upper.append(c);
-            }
-        }
-        upper.append(lower);
+        double areaA = triangleA.findArea();
+        double areaB = triangleB.findArea();
+        System.out.printf("areaA = %s areaB = %s\n", areaA, areaB);
 
-        return upper.toString();
+        System.out.printf("numberOfSides = %s\n", Triangle.numberOfSides);
     }
 }
