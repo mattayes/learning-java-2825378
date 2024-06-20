@@ -1,23 +1,23 @@
 public class Main {
     public static void main(String[] args) {
-        final double groupTotalMealPrice = calculateTotalMealPrice(100, .2, .08);
-        printPrice(groupTotalMealPrice);
-
-        final double individualMealPrice = groupTotalMealPrice / 5;
-        System.out.printf("Total per person is %.2f\n", individualMealPrice);
+        String out = moveCapitalLettersToFront("DweweDDSDSweDwegdW");
+        System.out.println(out);
     }
 
-    private static void printPrice(double total) {
-        System.out.printf("Your total meal price is %.2f\n", total);
-    }
+    private static String moveCapitalLettersToFront(String s) {
+        // Your code goes here.
+        StringBuilder lower = new StringBuilder();
+        StringBuilder upper = new StringBuilder();
 
-    private static double calculateTotalMealPrice(
-            double listedMealPrice,
-            double tipRate,
-            double taxRate) {
-        double tip = tipRate * listedMealPrice;
-        double tax = taxRate * listedMealPrice;
+        for (char c : s.toCharArray()) {
+            if (Character.isLowerCase(c)) {
+                lower.append(c);
+            } else {
+                upper.append(c);
+            }
+        }
+        upper.append(lower);
 
-        return listedMealPrice + tip + tax;
+        return upper.toString();
     }
 }
