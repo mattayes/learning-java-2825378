@@ -2,23 +2,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GenericMethods {
-    static Character[] charArray = {'h', 'e', 'l', 'l', 'o'};
-    static Integer[] intArray = {1, 2, 3, 4, 5};
-    static Boolean[] boolArray = {true, false, true};
-
-    public static <T> List<T> arrayToList(T[] array, List<T> list) {
-        for (T t : array) {
-            list.add(t);
-        }
-        return list;
+    public static void main(String[] args) {
+        printShoppingList("Jam", "Bananas");
     }
 
-    public static void main(String[] args) {
-        List<Character> charList = arrayToList(charArray, new ArrayList<>());
-        List<Integer> intList = arrayToList(intArray, new ArrayList<>());
-        List<Boolean> boolList = arrayToList(boolArray, new ArrayList<>());
+//    private static void printShoppingList(String string1, String string2) {
+//        System.out.println(string1);
+//        System.out.println(string2);
+//    }
 
-        System.out.printf("%s\n%s\n%s\n", charList, intList, boolList);
-        System.out.println(boolList.get(0));
+//    private static void printShoppingList(String[] items) {
+//        System.out.println("SHOPPING LIST");
+//        for (int i = 0; i < items.length; i++) {
+//            System.out.printf("%d: %s\n", i+1, items[i]);
+//        }
+//    }
+
+    private static void printShoppingList(String... items) {
+        System.out.println("SHOPPING LIST");
+        for (int i = 0; i < items.length; i++) {
+            System.out.printf("%d: %s\n", i+1, items[i]);
+        }
     }
 }
